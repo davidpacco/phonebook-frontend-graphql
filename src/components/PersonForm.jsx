@@ -48,6 +48,7 @@ export function PersonForm() {
             Name
             <input
               type="text"
+              value={name}
               onChange={(e) => setName(e.target.value)}
             />
           </label>
@@ -58,6 +59,7 @@ export function PersonForm() {
             Phone
             <input
               type="text"
+              value={phone}
               onChange={(e) => setPhone(e.target.value)}
             />
           </label>
@@ -68,6 +70,7 @@ export function PersonForm() {
             Street
             <input
               type="text"
+              value={street}
               onChange={(e) => setStreet(e.target.value)}
             />
           </label>
@@ -78,6 +81,7 @@ export function PersonForm() {
             City
             <input
               type="text"
+              value={city}
               onChange={(e) => setCity(e.target.value)}
             />
           </label>
