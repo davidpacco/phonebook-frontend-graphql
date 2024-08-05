@@ -4,6 +4,7 @@ import { Persons } from "./components/Persons"
 import { PersonForm } from "./components/PersonForm"
 import { ALL_PERSONS } from "./queries"
 import { Notify } from "./components/Notify"
+import { PhoneForm } from "./components/PhoneForm"
 
 function App() {
   const result = useQuery(ALL_PERSONS)
@@ -23,6 +24,7 @@ function App() {
       <Notify errorMessage={errorMessage} />
       <Persons persons={result.data.allPersons} />
       <PersonForm setError={notify} />
+      <PhoneForm setError={notify} />
     </div>
   )
 }
