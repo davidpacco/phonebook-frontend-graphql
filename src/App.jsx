@@ -6,12 +6,17 @@ import { ALL_PERSONS } from "./queries"
 import { Notify } from "./components/Notify"
 import { PhoneForm } from "./components/PhoneForm"
 import { LoginForm } from "./components/LoginForm"
+import { useEffect } from "react"
 
 function App() {
   const result = useQuery(ALL_PERSONS)
   const [token, setToken] = useState(null)
   const [errorMessage, setErrorMessage] = useState(null)
   const client = useApolloClient()
+
+  useEffect(() => {
+    setToken(localStorage.getItem('phonebook-user-token'))
+  }, [])
 
   const notify = (message) => {
     setErrorMessage(message)
