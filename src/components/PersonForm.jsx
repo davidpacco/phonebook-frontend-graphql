@@ -20,7 +20,12 @@ export function PersonForm({ setError }) {
   const handleSubmit = e => {
     e.preventDefault()
 
-    createPerson({ variables: { name, phone, street, city } })
+    createPerson({
+      variables: {
+        name, street, city,
+        phone: phone.length > 0 ? phone : undefined
+      }
+    })
 
     setName('')
     setPhone('')
